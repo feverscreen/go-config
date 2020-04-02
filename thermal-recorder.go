@@ -27,6 +27,7 @@ func init() {
 }
 
 type ThermalRecorder struct {
+	Active         bool
 	OutputDir      string `mapstructure:"output-dir"`
 	MinDiskSpaceMB uint64 `mapstructure:"min-disk-space-mb"`
 	MinSecs        int    `mapstructure:"min-secs"`
@@ -36,6 +37,7 @@ type ThermalRecorder struct {
 
 func DefaultThermalRecorder() ThermalRecorder {
 	return ThermalRecorder{
+		Active:         false,
 		MaxSecs:        600,
 		MinSecs:        10,
 		PreviewSecs:    3,
