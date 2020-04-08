@@ -33,6 +33,7 @@ type ThermalRecorder struct {
 	MinSecs        int    `mapstructure:"min-secs"`
 	MaxSecs        int    `mapstructure:"max-secs"`
 	PreviewSecs    int    `mapstructure:"preview-secs"`
+	LogRate        int    `mapstructure:"log-rate"`
 }
 
 func DefaultThermalRecorder() ThermalRecorder {
@@ -43,6 +44,7 @@ func DefaultThermalRecorder() ThermalRecorder {
 		PreviewSecs:    3,
 		MinDiskSpaceMB: 200,
 		OutputDir:      "/var/spool/cptv",
+		LogRate:        0,
 	}
 }
 
