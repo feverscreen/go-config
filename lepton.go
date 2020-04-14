@@ -16,6 +16,8 @@
 
 package config
 
+import "time"
+
 const LeptonKey = "lepton"
 
 func init() {
@@ -27,14 +29,16 @@ func init() {
 }
 
 type Lepton struct {
-	SPISpeed    int64  `mapstructure:"spi-speed"`
-	FrameOutput string `mapstructure:"frame-output"`
+	SPISpeed    int64         `mapstructure:"spi-speed"`
+	FrameOutput string        `mapstructure:"frame-output"`
+	FFCPeriod   time.Duration `mapstructure:"ffc-period"`
 }
 
 func DefaultLepton() Lepton {
 	return Lepton{
 		SPISpeed:    20000000,
 		FrameOutput: "/var/run/lepton-frames",
+		FFCPeriod:   10 * time.Minute,
 	}
 }
 
