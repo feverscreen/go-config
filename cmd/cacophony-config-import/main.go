@@ -8,7 +8,7 @@ import (
 	"reflect"
 	"time"
 
-	config "github.com/TheCacophonyProject/go-config"
+	config "github.com/feverscreen/go-config"
 	"github.com/alexflint/go-arg"
 	"github.com/mitchellh/mapstructure"
 	"github.com/spf13/viper"
